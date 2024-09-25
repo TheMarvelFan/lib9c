@@ -5,6 +5,7 @@ on:
     branches:
       - development
       - main
+      - feature/dpos-with-guild-migrate
   workflow_dispatch:
 
 jobs:
