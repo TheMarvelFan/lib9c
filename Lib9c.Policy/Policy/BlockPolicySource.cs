@@ -140,15 +140,9 @@ namespace Nekoyume.Blockchain.Policy
             // FIXME: Slight inconsistency due to pre-existing delegate.
             return new BlockPolicy(
                 policyActionsRegistry: new PolicyActionsRegistry(
-                    beginBlockActions: new IAction[] {
-                        new SlashValidator(),
-                        new AllocateReward(),
-                    }.ToImmutableArray(),
+                    beginBlockActions: ImmutableArray<IAction>.Empty,
                     endBlockActions: new IAction[] {
-                        new UpdateValidators(),
-                        new RecordProposer(),
                         new RewardGold(),
-                        new ReleaseValidatorUnbondings(),
                     }.ToImmutableArray(),
                     beginTxActions: ImmutableArray<IAction>.Empty,
                     endTxActions: ImmutableArray<IAction>.Empty),
